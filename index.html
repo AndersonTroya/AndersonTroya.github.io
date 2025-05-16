@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio Personal - Desarrollador</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        /* Reset some defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f8ff;
+            color: #013a63;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #005f99;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #cce7ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #003f66;
+            color: #e0f4ff;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            color: #004a80;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #0073e6;
+            padding-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        /* Hero / Inicio */
+        #inicio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            background: #e6f0ff;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 95, 153, 0.15);
+        }
+
+        #inicio img {
+            width: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0,95,153,0.3);
+            object-fit: cover;
+        }
+
+        #inicio .intro-text {
+            max-width: 400px;
+        }
+
+        #inicio .intro-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            color: #003366;
+        }
+
+        #inicio .intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #00497a;
+        }
+
+        /* Projects */
+        #proyectos .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,95,153,0.1);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0,95,153,0.25);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: #0073e6;
+            margin-bottom: 0.7rem;
+            align-self: center;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #004d99;
+            text-align: center;
+        }
+
+        .project-card p {
+            color: #23527c;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .project-image {
+            margin-top: 1rem;
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            max-height: 150px;
+            box-shadow: 0 0 6px rgba(0, 115, 230, 0.3);
+        }
+
+        /* Experience sections */
+        .experience-list {
+            list-style: none;
+            border-left: 3px solid #0073e6;
+            padding-left: 1.2rem;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #0073e6;
+            border-radius: 50%;
+            border: 3px solid #e6f0ff;
+        }
+
+        .experience-item h4 {
+            font-weight: 700;
+            color: #004a80;
+            margin-bottom: 0.2rem;
+        }
+
+        .experience-item span {
+            font-style: italic;
+            color: #23527c;
+            font-size: 0.9rem;
+        }
+
+        .experience-item p {
+            color: #334e6f;
+            font-size: 0.98rem;
+            margin-top: 0.3rem;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #003f66;
+            color: #cce7ff;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            #inicio {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #inicio .intro-text {
+                max-width: 100%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav aria-label="Navegación principal">
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#proyectos"><i class="fas fa-folder-open"></i> Proyectos</a>
+        <a href="#experiencia-academica"><i class="fas fa-graduation-cap"></i> Experiencia Académica</a>
+        <a href="#experiencia-personal"><i class="fas fa-briefcase"></i> Experiencia Personal</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="inicio" aria-label="Sección de inicio">
+    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Foto personal desarrollador" />
+    <div class="intro-text">
+        <h1>Hola, soy Anderson Troya</h1>
+        <p>Desarrollador Full Stack apasionado por crear experiencias digitales impactantes y funcionales. Me especializo en tecnologías web modernas y soluciones escalables.</p>
+    </div>
+</section>
+
+<section id="proyectos" aria-label="Sección de proyectos">
+    <h2><i class="fas fa-folder-open"></i> Proyectos</h2>
+    <div class="project-list">
+        <article class="project-card" tabindex="0">
+            <i class="fas fa-code project-icon" aria-hidden="true"></i>
+            <h3>App Tareas</h3>
+            <p>Aplicación para gestionar tareas diaria con funcionalidades de prioridad y recordatorios.</p>
+            <img class="project-image" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Captura de App Tareas" />
+        </article>
+        <article class="project-card" tabindex="0">
+            <i class="fab fa-react project-icon" aria-hidden="true"></i>
+            <h3>Dashboard React</h3>
+            <p>Panel administrativo en React para monitoreo en tiempo real y análisis de datos.</p>
+            <img class="project-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Captura de Dashboard React" />
+        </article>
+        <article class="project-card" tabindex="0">
+            <i class="fas fa-mobile-alt project-icon" aria-hidden="true"></i>
+            <h3>App Móvil</h3>
+            <p>Aplicación móvil para reservas en línea con diseño intuitivo y multilenguaje.</p>
+            <img class="project-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Captura App Móvil" />
+        </article>
+    </div>
+</section>
+
+<section id="experiencia-academica" aria-label="Sección de experiencia académica">
+    <h2><i class="fas fa-graduation-cap"></i> Experiencia Académica</h2>
+    <ul class="experience-list">
+        <li class="experience-item" tabindex="0">
+            <h4>Licenciatura en Ingeniería de Sistemas</h4>
+            <span>Universidad Nacional - 2015 a 2019</span>
+            <p>Formación en desarrollo de software, bases de datos, redes y metodologías ágiles.</p>
+        </li>
+        <li class="experience-item" tabindex="0">
+            <h4>Curso Avanzado de React</h4>
+            <span>Platzi - 2021</span>
+            <p>Especialización en desarrollo frontend moderno con React, hooks, y contexto.</p>
+        </li>
+        <li class="experience-item" tabindex="0">
+            <h4>Certificación Scrum Master</h4>
+            <span>Scrum Alliance - 2022</span>
+            <p>Certificación para la gestión eficiente de proyectos ágil con Scrum.</p>
+        </li>
+    </ul>
+</section>
+
+<section id="experiencia-personal" aria-label="Sección de experiencia personal">
+    <h2><i class="fas fa-briefcase"></i> Experiencia Personal</h2>
+    <ul class="experience-list">
+        <li class="experience-item" tabindex="0">
+            <h4>Desarrollador Frontend</h4>
+            <span>Empresa Tech Solutions - 2019 a 2021</span>
+            <p>Desarrollo y mantenimiento de interfaces web responsivas enfocadas en experiencia de usuario.</p>
+        </li>
+        <li class="experience-item" tabindex="0">
+            <h4>Full Stack Developer</h4>
+            <span>Innovapp S.A. - 2021 a Actualidad</span>
+            <p>Implementación de soluciones completas para clientes, integrando backend y frontend con tecnologías modernas.</p>
+        </li>
+    </ul>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Anderson Troya - Desarrollador Web</p>
+</footer>
+
+</body>
+</html>
+
